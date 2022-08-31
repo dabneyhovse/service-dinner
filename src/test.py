@@ -6,8 +6,8 @@ from tabula.io import read_pdf
 
 
 # File path shit
-TEMP_FILE = "temp"
-DIR = "./"
+TEMP_FILE = "temp.pdf"
+DIR = "./temp/"
 FULL_PATH = DIR+TEMP_FILE
 
 # Menu link text
