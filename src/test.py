@@ -26,11 +26,13 @@ link = next(L for L in links if L.text.strip() == LINK_TEXT)
 menue_url = "https://dining.caltech.edu"+link["href"]
 
 menue_page = requests.get(menue_url)
-with open(FULL_PATH, 'wb') as f:
+with open(FULL_PATH, 'wb+') as f:
     f.write(menue_page.content)
 
-df = read_pdf(FULL_PATH, pages='1', multiple_tables=True)
+df = read_pdf(FULL_PATH, pages='1', lattice=True , multiple_tables=True)[0]
 print(df)
 
 # TODO sanitize and prep df (remove the  nulls and shit)
 #       ~ look into data frame flattening
+
+print(df.columns)
