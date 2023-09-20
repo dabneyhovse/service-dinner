@@ -1,5 +1,5 @@
 from Target import Target
-
+import asyncio
 targets = [
  Target("dinner-menu", "This Week's House Dinner Menu", "https://dining.caltech.edu/student-meal-plan"),
  Target("browne-comfort-eq", "Comfort Equation Specials", "https://dining.caltech.edu/where-to-eat-"),
@@ -14,5 +14,6 @@ targets = [
 ]
 
 for target in targets:
- target.scrape()
- print(target)
+    target.scrape()
+    print(target)
+    asyncio.run(target.screenshot())
